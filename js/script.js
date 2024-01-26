@@ -1,0 +1,1 @@
+//Logica geral do site (animação, interação com o usuario que acontece em vazias paginas...).

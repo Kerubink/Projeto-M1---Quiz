@@ -1,0 +1,1 @@
+//Logica exclusiva do quiz.
