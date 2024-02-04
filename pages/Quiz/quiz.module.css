@@ -19,7 +19,7 @@ section {
   position: fixed;
   bottom: 16px;
   right: 16px;
-  z-index: 1000;
+  z-index: 1002;
   pointer-events: none; 
 }
 
@@ -33,7 +33,6 @@ section {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
-
 
 
 .quiz_container {
@@ -281,7 +280,8 @@ section {
   backdrop-filter: blur(5px);
   z-index: 1000;
   justify-content: center;
-  align-items: center; /* Z-index alto para garantir que cubra tudo */
+  align-items: center;
+  flex-direction: column;
 }
 
 /* Adicione a classe hidden para ocultar a div de sobreposição */
@@ -289,32 +289,51 @@ section {
   display: none;
 }
 
-#retomar {
+/*codigo da tela de pausa*/
+.pause{
+  width: 300px;
+  height: 450px;
+  background-image: url(/assets/images/fundo_pause.svg);
   display: flex;
-  justify-content: center;
-  color: #fff;
-  width: 80px;
-  height: 80px;
-  border-radius: 100%;
-  background: linear-gradient(30deg, var(--color-azul-mar) 20%, var(--color-azul-escuro) 80%);
-  transition: all 0.3s ease-in-out 0s;
-  box-shadow: rgba(193, 244, 246, 0.698) 0px 0px 0px 0px;
-  animation: 1.2s cubic-bezier(0.8, 0, 0, 1) 0s infinite normal none running pulse;
   align-items: center;
-  border: 0;
+  justify-content: space-around;
+  flex-direction: column;
+  border-radius: 20px;
+  z-index: 1001;
+  position: relative;
+  border: #3498db solid 1px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
 }
 
-
-#retomar:is(:hover, :focus) {
-  transform: scale(1.2);
+.pause .pausa_titulo {
+  background-color: #ffffff;
+  height: 40px;
+  width: 90%;
+  border-radius: 10px;
+  border: #3498db solid 1px;
+  position: absolute;
+  top: -13px;
+  color: var(--color-azul-escuro);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
 }
 
-@keyframes pulse {
-  100% {
-    box-shadow: 0 0 0 45px rgba(0, 242, 250, 0.164);
-  }
+#overlay .unicornio_com_cafe {
+  z-index: 1000;
+  position: absolute;
+  top: 0;
 }
 
+.botoes_pause {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+}
+
+  
 
 
 /* Adicione este código CSS para estilizar a div de contagem regressiva */

@@ -10,17 +10,23 @@
     <!-- Arquivo CSS global -->
     <link rel="stylesheet" href="/css/global_styles.css" />
 
-    <!-- Arquivo CSS específico da página de resultados -->
+    <!-- Arquivo CSS específico da página do quiz -->
     <link rel="stylesheet" href="quiz.module.css" />
+
+    <!-- Arquivos CSS de components-->
+    <link rel="stylesheet" href="/css/components/botoes_unicornios.css" />
+    <link rel="stylesheet" href="/css/components/botao_iniciar.css" />
 
     <!-- Ícones do Google -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
+    <!-- Ícones do Google -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+
     <!-- Fontes do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Honk&family=Nabla&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Honk&family=Nabla&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <main>
@@ -28,12 +34,49 @@
                 <div id="toastContainer"></div>
                 <div id="contagemRegressiva" style="display: flex;">   
                     <span id="contagemRegressivaSpan" class="nabla"></span>
+                    <div class="item button-parrot" style="--bg-color: #2c3e50">
+                        <button id="iniciarContagemBtn" onclick="iniciarContagemRegressivaManual()">Iniciar!
+                          <div class="parrot"></div>
+                          <div class="parrot"></div>
+                          <div class="parrot"></div>
+                          <div class="parrot"></div>
+                          <div class="parrot"></div>
+                          <div class="parrot"></div>
+                        </button>
+                      </div>
                 </div>
 
             <div id="overlay" class="hidden">
-                <button type="button" id="retomar" class="hidden" onclick="retomarQuiz()">
-                    <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="26px"><path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" fill="currentColor"></path></svg>
-                </button>
+                <img width="150px" height="150px" class="unicornio_com_cafe" src="/assets/images/pausa-para-o-cafe.png" alt="unicornio com café">
+                <div class="pause">
+                    <div class="pausa_titulo">
+                        <h1 class="pixelify-sans">Pausa pro Café?</h1>
+                    </div>
+                    <div class="botoes_musica"></div>
+                    <div class="botoes_pause">
+                        <button type="button" id="retomar" class="hidden botao_animado" onclick="retomarQuiz()">
+                            <img class="icon" width="32" height="32" src="/assets/icons/rosquinha.png" alt="">
+                            <img class="unicornio" src="https://cdn-icons-png.flaticon.com/512/4865/4865931.png" alt="Uniconio feliz"  width="100" viewBox="0 0 451.103 424.198" height="100" >
+                            <span class="texto_botao">Retomar</span>
+                            <span class="texto_hover">VAMO</span>
+                            <span class="texto_hover2">VAMO</span>
+                        </button>
+                        <button type="button" id="recomeçar" class="hidden botao_animado" onclick="recomeçarQuiz()">
+                            <img class="icon" width="32" height="32" src="/assets/icons/croissant.png" alt="">
+                            <img class="unicornio" src="https://cdn-icons-png.flaticon.com/512/4865/4865936.png" alt="Uniconio feliz"  width="100" viewBox="0 0 451.103 424.198" height="100" >
+                            <span class="texto_botao" style="font-size: 13px;  top: 35%;">Recomeçar</span>
+                            <span class="texto_hover">SHOW!</span>
+                            <span class="texto_hover2">SHOW!</span>
+                        </button>
+                        <button type="button" id="sair" class="hidden botao_animado" onclick="sairQuiz()">
+                            <img class="icon" width="32" height="32" src="/assets/icons/melancia.png" alt="">
+                            <img class="unicornio" src="https://cdn-icons-png.flaticon.com/512/4865/4865955.png" alt="Uniconio feliz"  width="100" viewBox="0 0 451.103 424.198" height="100" >
+                            <span class="texto_botao" style="left: 45%;">Sair</span>
+                            <span class="texto_hover">NÃO!</span>
+                            <span class="texto_hover2">NÃO!</span>
+                        </button>
+                    </div>
+                </div>
             </div>
             <div class="quiz_container">
                 <div class="perguntas">

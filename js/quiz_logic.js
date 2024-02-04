@@ -7,8 +7,19 @@ let intervalId;
 let pontuacao = 0; // Adicionando variável de pontuação
 
 document.addEventListener('DOMContentLoaded', () => {
-    iniciarContagemRegressiva();
+    const contagemRegressivaDiv = document.getElementById('contagemRegressiva');
+    contagemRegressivaDiv.style.display = 'flex';
+
+    const iniciarContagemBtn = document.getElementById('iniciarContagemBtn'); // Substitua 'seuBotaoDeIniciar' pelo ID real do seu botão
+    iniciarContagemBtn.addEventListener('click', iniciarContagemRegressivaManual);
 });
+
+function iniciarContagemRegressivaManual() {
+    const iniciarContagemBtn = document.getElementById('iniciarContagemBtn'); // Substitua 'seuBotaoDeIniciar' pelo ID real do seu botão
+    iniciarContagemBtn.style.display = 'none';  // Oculta o botão após o início manual
+
+    iniciarContagemRegressiva();
+}
 
 function exibirPergunta() {
     const { pergunta, alternativas } = perguntas[perguntaAtual];
@@ -92,6 +103,7 @@ function verificarResposta() {
         if (perguntaAtual < perguntas.length) {
             tempoRestante = tempoPorPergunta;
             exibirPergunta();
+            next_level();
             iniciarContador();
         } else {
             encerrarQuiz();
@@ -135,11 +147,15 @@ function atualizarCorTimer(timer, display) {
 function pausarRetomarQuiz() {
     const overlay = document.getElementById('overlay');
     const retomarButton = document.getElementById('retomar');
+    const recomeçarButton = document.getElementById('recomeçar');
+    const sairButton = document.getElementById('sair');
 
     if (intervalId) {
         clearInterval(intervalId);
         overlay.style.display = 'flex';
         retomarButton.style.display = 'flex';
+        recomeçarButton.style.display = 'flex';
+        sairButton.style.display = 'flex';
     } else {
         overlay.style.display = 'none';
         retomarButton.style.display = 'none';
@@ -183,6 +199,7 @@ function iniciarContagemRegressiva() {
 
     const intervalIdContagem = setInterval(() => {
         contagemRegressivaSpan.textContent = contagem;
+        
 
         if (contagem <= 0) {
             clearInterval(intervalIdContagem);
@@ -190,13 +207,32 @@ function iniciarContagemRegressiva() {
             exibirPergunta();
         }
 
+        if (contagem == 3) {
+            get_ready();
+        }
+
         contagem--;
     }, 1000);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const contagemRegressivaDiv = document.getElementById('contagemRegressiva');
-    contagemRegressivaDiv.style.display = 'flex';
+function recomeçarQuiz() {
+    perguntaAtual = 0;
+    pontuacao = 0;
+    tempoRestante = tempoPorPergunta;
+    exibirPergunta();
+    iniciarContador();
+    const overlay = document.getElementById('overlay');
+    overlay.style.display = 'none';
+}
 
-    iniciarContagemRegressiva();
-});
+window.recomeçarQuiz = recomeçarQuiz;
+
+function sairQuiz() {
+    const confirmacao = confirm('Tem certeza que deseja sair do quiz? Sua pontuação não será salva.');
+
+    if (confirmacao) {
+        window.location.href = '/index.html';
+    }
+}
+
+window.sairQuiz = sairQuiz;
