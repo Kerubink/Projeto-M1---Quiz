@@ -15,25 +15,6 @@ section {
 }
 
 
-#toastContainer {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 1002;
-  pointer-events: none; 
-}
-
-
-.toast {
-  background-color: #333;
-  color: #fff;
-  padding: 16px;
-  border-radius: 8px;
-  margin-bottom: 8px;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
 
 .quiz_container {
     display: flex;
@@ -41,10 +22,13 @@ section {
     justify-content: space-around;
     flex-direction: column;
     width: 800px;
-    height: 500px;
+    height: 700px;
     background-image: url("/assets/images/stacked-waves-haikei.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    border: 0.5vmin solid #05060f;
+    box-shadow: 0.4rem 0.4rem #05060f;
 }
 
 .perguntas {
@@ -57,8 +41,37 @@ section {
     height: 30%;
     background-color: var(--color-white);
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
 }
+
+.perguntas .perguntas_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 20px;
+}
+
+
+.nivel_nome,
+.numero_questao {
+  color: #000000;
+}
+
+.nivel_nome {
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.numero_questao {
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
 
 .perguntas #Questoes {
   height: 100%;
@@ -253,20 +266,11 @@ section {
   align-items: center;
   justify-content: space-around;
   flex-direction: row;
-  width: 110%;
+  width: 100%;
   height: 20%;
   border-radius: 10px;
 }
 
-.alternativas  button {
-  border: 0;
-  background-color: #3498db;
-  color: var(--color-white);
-  width: 30%;
-  min-width: 100px;
-  height: 30px;
-  border-radius: 5px;
-}
 
 
 /* Adicione este código CSS para estilizar a div de sobreposição */
@@ -301,8 +305,9 @@ section {
   border-radius: 20px;
   z-index: 1001;
   position: relative;
-  border: #3498db solid 1px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  border: 0.5vmin solid #05060f;
+  box-shadow: 0.4rem 0.4rem #05060f;
+  padding: 20px;
 }
 
 .pause .pausa_titulo {
@@ -323,17 +328,25 @@ section {
   top: 0;
 }
 
+.botoes_musica {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+  height: 20%;
+  border-radius: 10px;
+}
+
 .botoes_pause {
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
   width: 80%;
-  height: 80%;
+  height: 60%;
   border-radius: 10px;
 }
-
-  
 
 
 /* Adicione este código CSS para estilizar a div de contagem regressiva */
@@ -394,6 +407,15 @@ section {
     .alternativa {
       flex: 0 0 90%;
     }
+
+    .botoes {
+      flex-direction: column;
+      width: 110%;
+      height: 40%;
+      border-radius: 10px;
+    }
+    
+    
   }
 
 

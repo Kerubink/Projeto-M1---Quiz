@@ -21,12 +21,55 @@ function iniciarContagemRegressivaManual() {
     iniciarContagemRegressiva();
 }
 
+function mostrarNivelDaPergunta(pergunta) {
+    const elementoNivel = document.getElementById('nivel');
+
+
+    elementoNivel.innerHTML = '';
+
+    const nivelNome = document.createElement('span');
+    nivelNome.className = 'nivel_nome';
+    nivelNome.textContent = `Nível: ${pergunta.nivel}`;
+
+    elementoNivel.appendChild(nivelNome);
+
+    if (perguntaAtual <= 4) {
+        nivelNome.classList.add('verde');
+    } else if (perguntaAtual <= 9) {
+        nivelNome.classList.add('amarelo');
+    } else if (perguntaAtual <= 14) {
+        nivelNome.classList.add('vermelho');
+    }
+}
+
+function mostrarNumeroDaPergunta(perguntaAtual) {
+    const elementoNumero = document.getElementById('questao_numero');
+
+    elementoNumero.innerHTML = '';
+
+    const indice = perguntas.indexOf(perguntaAtual);
+
+    const numeroQuestao = document.createElement('span');
+    numeroQuestao.className = 'numero_questao';
+    numeroQuestao.textContent = `${indice + 1} / 15`;
+
+    elementoNumero.appendChild(numeroQuestao);
+}
+
+
 function exibirPergunta() {
     const { pergunta, alternativas } = perguntas[perguntaAtual];
     document.getElementById("Questoes").textContent = pergunta;
 
     const alternativasEmbaralhadas = alternativas.sort(() => Math.random() - 0.5);
     const alternativasLista = document.querySelector(".alternativas-lista");
+
+    const nivelPergunta = perguntas[perguntaAtual];
+    mostrarNivelDaPergunta(nivelPergunta);
+
+    const numeroPergunta = perguntas[perguntaAtual];
+    mostrarNumeroDaPergunta(numeroPergunta);
+
 
     alternativasLista.innerHTML = alternativasEmbaralhadas.map((alternativa, index) => `
         <li class="alternativa">
@@ -51,6 +94,7 @@ function exibirPergunta() {
 
     iniciarContador();
 }
+
 
 function showToast(message) {
     const toastContainer = document.getElementById('toastContainer');
@@ -84,6 +128,7 @@ function verificarResposta() {
 
     if (!respostaUsuario) {
         showToast('Por favor, selecione uma alternativa.');
+        nivel_atual('osdmskd');
         return;
     }
 
@@ -97,7 +142,7 @@ function verificarResposta() {
         const pontuacaoPergunta = Math.max(1, Math.ceil(pontosMaximos - pontosPorSegundo * (tempoPorPergunta - tempoRestante)));
         pontuacao += pontuacaoPergunta;
 
-        showToast('Resposta correta! Pontuação atual: ' + pontuacao);
+        showToast('Resposta correta!');
         perguntaAtual++;
 
         if (perguntaAtual < perguntas.length) {

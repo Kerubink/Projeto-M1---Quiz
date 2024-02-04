@@ -31,6 +31,12 @@
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
 }
 
+.botao_animado:active {
+  transform: scale(1.1);
+  transition: all 100ms ease;
+}
+
+
 
 .unicornio {
   position: absolute;
@@ -82,16 +88,18 @@
 
 .botao_animado:hover .texto_botao {
   color: transparent;
+  text-shadow: none
 }
-
 .texto_botao {
   position: absolute;
-  top: 25%;
+  top: 35%;
   left: 35%;
-  font-size: 18px;
-  font-weight: 900;
-  letter-spacing: 1px;
+  font-size: 16px;
   color: var(--color-white);
+  text-shadow: 2px 2px rgb(116, 116, 116);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
 }
 
 .texto_hover, .texto_hover2 {
@@ -100,6 +108,9 @@
   opacity: 0;
   color: var(--color-white);
   animation: pulse-animation_0011 1s infinite;
+  text-shadow: 2px 2px rgb(116, 116, 116);
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 @keyframes pulse-animation_0011 {
