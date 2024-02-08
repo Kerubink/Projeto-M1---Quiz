@@ -1,1 +1,0 @@
-// Logica da pagina de resultado (o contador dos pontos, animações)

@@ -1,25 +1,255 @@
-<!--Pagina onde DEVE conter apenas o codigo de estrutura do quiz-->
 <!DOCTYPE html>
-<html lang="pt-br">
+<<<<<<< HEAD
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+=======
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+>>>>>>> 7725dfca3926ecafc370baef1cbf0b51ae2258e2
     <title>Quiz - Projeto M1</title>
-    <!--Logo do quiz-->
-    <link type="image/png" sizes="16x16" rel="icon" href="/assets/images/logo.png">
+    <!-- Logo do quiz -->
+    <link
+      type="image/png"
+      sizes="16x16"
+      rel="icon"
+      href="/assets/images/logo.png"
+    />
 
-    <!--arquivo css global-->
-    <link rel="stylesheet" href="/css/global_styles.css">
+    <!-- Arquivo CSS global -->
+    <link rel="stylesheet" href="/css/global_styles.css" />
 
-    <!--arquivo css especifico da pagina de resultados-->
-    <link rel="stylesheet" href="quiz.module.css">
+    <!-- Arquivo CSS específico da página do quiz -->
+    <link rel="stylesheet" href="quiz.module.css" />
 
-    <!--Icones do Google-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-</head>
-<body>
-    <h1>Quiz</h1>
+    <!-- Arquivos CSS de components-->
+    <link rel="stylesheet" href="/css/components/botoes_unicornios.css" />
+    <link rel="stylesheet" href="/css/components/botao_iniciar.css" />
+    <link rel="stylesheet" href="/css/components/botao_simples.css" />
+    <link rel="stylesheet" href="/css/components/botoes_musica.css" />
+    <link rel="stylesheet" href="/css/components/toast.css" />
+
+    <!-- Ícones do Google -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <!-- Ícones do Google -->
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css"
+    />
+
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Honk&family=Nabla&family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <section>
+
+        <!-- notificações toast (alerts) -->
+        <div id="toastContainer"></div>
+
+        <!-- tela da contagem regressiva -->
+        <div id="contagemRegressiva" style="display: flex">
+          <span id="contagemRegressivaSpan" class="nabla"></span>
+
+          <button
+            class="button"
+            id="iniciarContagemBtn"
+            onclick="iniciarContagemRegressivaManual()"
+          >
+            <img
+              width="45"
+              height="45"
+              src="	https://cdn-icons-png.flaticon.com/512/4865/4865936.png
+                        "
+              alt=""
+            />
+            <span class="now">AGORA!</span>
+            <span class="play">Jogar</span>
+          </button>
+        </div>
+
+        <!-- Tela de Pausa -->
+        <div id="overlay" class="hidden">
+          <img
+            width="150px"
+            height="150px"
+            class="unicornio_com_cafe"
+            src="/assets/images/pausa-para-o-cafe.png"
+            alt="unicornio com café"
+          />
+          <div class="pause">
+            <div class="pausa_titulo">
+              <h1 class="pixelify-sans">Pausa pro Café?</h1>
+            </div>
+            <div class="botoes_musica">
+                <input id="mutarMusica" type="checkbox" onclick="toggleMute('musica')"/>
+                    <label class="toggleSwitch" for="mutarMusica">
+                    <div class="speaker">
+                        <img width="100%" height="100%" src="/assets/icons/anim/som.gif" alt="icone animado de musica tocando">
+                    </div>
+
+                    <div class="mute-speaker">
+                        <img width="100%" height="100%" src="/assets/icons/anim/mudo.gif" alt="icone animado de musica no mudo">
+                    </div>
+                </label>
+
+                <input id="mutarEfeitos" type="checkbox" onclick="toggleMute('efeitos')" />
+                    <label class="toggleSwitch" for="mutarEfeitos">
+                    <div class="speaker">
+                        <img width="100%" height="100%" src="/assets/icons/anim/sino.gif" alt="icone animado de efeitos sonoros tocando">
+                        </svg>
+                    </div>
+
+                    <div class="mute-speaker">
+                        <img width="35px" height="35px" src="/assets/icons/sino.png" alt="icone animado de efeitos sonoros no mudo">
+                    </div>
+                </label>
+            </div>
+            <div class="botoes_pause">
+              <button
+                type="button"
+                id="retomar"
+                class="hidden botao_animado"
+                onclick="retomarQuiz()"
+              >
+                <img
+                  class="icon"
+                  width="32"
+                  height="32"
+                  src="/assets/icons/rosquinha.png"
+                  alt=""
+                />
+                <img
+                  class="unicornio"
+                  src="https://cdn-icons-png.flaticon.com/512/4865/4865931.png"
+                  alt="Uniconio feliz"
+                  width="100"
+                  viewBox="0 0 451.103 424.198"
+                  height="100"
+                />
+                <span class="texto_botao">Retomar</span>
+                <span class="texto_hover">VAMO</span>
+                <span class="texto_hover2">VAMO</span>
+              </button>
+              <button
+                type="button"
+                id="recomeçar"
+                class="hidden botao_animado"
+                onclick="recomeçarQuiz()"
+              >
+                <img
+                  class="icon"
+                  width="32"
+                  height="32"
+                  src="/assets/icons/croissant.png"
+                  alt=""
+                />
+                <img
+                  class="unicornio"
+                  src="https://cdn-icons-png.flaticon.com/512/4865/4865936.png"
+                  alt="Uniconio feliz"
+                  width="100"
+                  viewBox="0 0 451.103 424.198"
+                  height="100"
+                />
+                <span class="texto_botao" style="font-size: 12px; top: 35%"
+                  >Recomeçar</span
+                >
+                <span class="texto_hover">SHOW!</span>
+                <span class="texto_hover2">SHOW!</span>
+              </button>
+              <button
+                type="button"
+                id="sair"
+                class="hidden botao_animado"
+                onclick="sairQuiz()"
+              >
+                <img
+                  class="icon"
+                  width="32"
+                  height="32"
+                  src="/assets/icons/melancia.png"
+                  alt=""
+                />
+                <img
+                  class="unicornio"
+                  src="https://cdn-icons-png.flaticon.com/512/4865/4865955.png"
+                  alt="Uniconio feliz"
+                  width="100"
+                  viewBox="0 0 451.103 424.198"
+                  height="100"
+                />
+                <span class="texto_botao" style="left: 45%">Sair</span>
+                <span class="texto_hover">NÃO!</span>
+                <span class="texto_hover2">NÃO!</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Container do Quiz -->
+        <div class="quiz_container">
+          <div class="perguntas">
+            <div class="contador">
+              <div id="timer"></div>
+            </div>
+            <div class="perguntas_info">
+              <div class="nivel" id="nivel"></div>
+              <div class="questao_numero" id="questao_numero"></div>
+            </div>
+            <div id="Questoes"></div>
+          </div>
+          <div class="alternativas">
+            <form id="formRespostas">
+              <ul class="alternativas-lista">
+                <!-- As alternativas são adicionadas aqui via javascript -->
+              </ul>
+              <div class="botoes">
+                <button type="button" class="botao_simples" id="pausarQuiz">
+                  <span class="button__text">Pausar</span>
+                  <span class="button__icon"
+                    ><img
+                      width="40"
+                      height="40"
+                      src="/assets/icons/anim/xicara-de-cafe.gif"
+                      alt=""
+                  /></span>
+                </button>
+                <button
+                  type="button"
+                  class="botao_simples"
+                  id="verificarResposta"
+                >
+                  <span class="button__text">Verificar</span>
+                  <span class="button__icon"
+                    ><img
+                      width="40"
+                      height="40"
+                      src="/assets/icons/anim/como.gif"
+                      alt=""
+                  /></span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
     <script src="/js/script.js"></script>
-    <script src="/js/quiz_logica.js"></script>
-</body>
+    <script src="/js/perguntas.js"></script>
+    <script src="/js/quiz_config.js"></script>
+    <script type="module" src="/js/quiz_logic.js"></script>
+  </body>
 </html>

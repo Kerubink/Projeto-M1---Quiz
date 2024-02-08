@@ -30,7 +30,13 @@
     --color-gray-lightest: #f0f0f0;
 }
 
-h1 {
-    /* exemplo de como usar uma cor do :root*/
-    color: var(--color-azul-mar);
+.pixelify-sans {
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
+
+
+
+

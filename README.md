@@ -17,7 +17,7 @@ Este é um projeto simples de quiz desenvolvido em HTML, CSS e JavaScript. O qui
 - **assets/:** Diretório para armazenar recursos como imagens.
 - **images/:** Armazena imagens utilizadas no projeto.
 - **pages/:** Armazena as paginas do projeto (`quiz.html` e `resultado.html`).
-- **module.css:** Aquivos de estilos modulares (`quiz.module.css` e `resultado.module.css`).
+- **module.css:** Aquivos de estilos modulares (`quiz.module.css` e `result.module.css`).
 - **css/:** Diretório para arquivos de estilo.
 
   - `global_styles.css`: Estilos globais para o projeto.
