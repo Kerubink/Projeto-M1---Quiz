@@ -1,15 +1,8 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-=======
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
->>>>>>> 7725dfca3926ecafc370baef1cbf0b51ae2258e2
     <title>Quiz - Projeto M1</title>
     <!-- Logo do quiz -->
     <link
@@ -24,6 +17,7 @@
 
     <!-- Arquivo CSS específico da página do quiz -->
     <link rel="stylesheet" href="quiz.module.css" />
+    <link rel="stylesheet" href="menu.module.css" />
 
     <!-- Arquivos CSS de components-->
     <link rel="stylesheet" href="/css/components/botoes_unicornios.css" />
@@ -54,13 +48,28 @@
   </head>
   <body>
     <main>
-      <section>
+
+      <section class="telaMenu">
+        <div class="navbar">
+          <ul>
+            <li>logo</li>
+            <li>texto</li>
+            <li>login</li>
+          </ul>
+        </div>
+        <div class="conteudo">
+        <div class="containerInfo"></div>
+        <div class="modos"></div>
+        </div>
+      </section>
+      
+      <section class="telaQuiz">
 
         <!-- notificações toast (alerts) -->
         <div id="toastContainer"></div>
 
         <!-- tela da contagem regressiva -->
-        <div id="contagemRegressiva" style="display: flex">
+        <div id="contagemRegressiva" style="display: none">
           <span id="contagemRegressivaSpan" class="nabla"></span>
 
           <button

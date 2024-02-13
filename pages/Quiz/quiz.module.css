@@ -1,6 +1,6 @@
 /* Estilo especificos do quiz (um botão especifico... uma animação que so acontece na pagina do quiz...) */
 
-section {
+.telaQuiz {
     background-color: var(--color-azul-mar);
     height: 100vh;
     display: flex;
@@ -28,8 +28,6 @@ section {
     border: 0.5vmin solid #05060f;
     box-shadow: 0.4rem 0.4rem #05060f;
 }
-
-
 
 .perguntas {
     position: relative;

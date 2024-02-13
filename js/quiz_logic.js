@@ -1,14 +1,14 @@
 import perguntas from './perguntas.js';
 
 let perguntaAtual = 0;
-let tempoPorPergunta = 30;
+let tempoPorPergunta = 3000;
 let tempoRestante = tempoPorPergunta;
 let intervalId;
 let pontuacao = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
     const contagemRegressivaDiv = document.getElementById('contagemRegressiva');
-    contagemRegressivaDiv.style.display = 'flex';
+    contagemRegressivaDiv.style.display = 'none';
 
     const iniciarContagemBtn = document.getElementById('iniciarContagemBtn'); 
     iniciarContagemBtn.addEventListener('click', iniciarContagemRegressivaManual);
