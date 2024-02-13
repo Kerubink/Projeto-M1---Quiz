@@ -1,16 +1,15 @@
 const audioMusicaQuiz = new Audio('/assets/music/musica_quiz.mp3');
 audioMusicaQuiz.loop = true;
-let isMusicPlaying = false;
 
 const get_ready_audio = new Audio('/assets/music/get_ready_1-104602.mp3');
-get_ready_audio.loop = false;
-
 const next_level_audio = new Audio('/assets/music/new-level-142995.mp3');
+const fail_level_audio = new Audio('/assets/music/fail-144746.mp3');
+const happy_pop_audio = new Audio('/assets/music/happy-pop-2-185287.mp3');
 
+let isMusicPlaying = false;
 let isEfeitosPlaying = false;
 
 function playMusic() {
-    console.log('Tocando música...');
     if (!isMusicPlaying) {
         audioMusicaQuiz.play()
             .then(() => {
@@ -24,12 +23,14 @@ function playMusic() {
 }
 
 function stopEfeitos() {
-    console.log('Parando efeitos...');
     get_ready_audio.pause();
     get_ready_audio.currentTime = 0;
 
     next_level_audio.pause();
     next_level_audio.currentTime = 0;
+
+    happy_pop_audio.pause();
+    happy_pop_audio.currentTime = 0;
 
     isEfeitosPlaying = false;
     console.log('Efeitos parados.');
@@ -63,26 +64,63 @@ function next_level() {
         });
 }
 
+function fail_level() {
+    console.log('Tocando efeito fail_level...');
+    stopEfeitos();
+
+    fail_level_audio.play()
+        .then(() => {
+            isEfeitosPlaying = true;
+            console.log('Efeito fail_level reproduzindo.');
+        })
+        .catch(error => {
+            console.error('Erro ao reproduzir efeito sonoro 2:', error.message);
+        });
+}
+
+
+function happy_pop() {
+    console.log('Tocando efeito happy_pop...');
+    if (!isEfeitosPlaying) {
+        happy_pop_audio.currentTime = 0;
+        happy_pop_audio.play()
+            .then(() => {
+                console.log('Efeito happy_pop reproduzindo.');
+            })
+            .catch(error => {
+                console.error('Erro ao reproduzir efeito sonoro 3:', error.message);
+            });
+    } else {
+        happy_pop_audio.currentTime = 0;
+        happy_pop_audio.play()
+            .then(() => {
+                console.log('Efeito happy_pop reproduzindo.');
+            })
+            .catch(error => {
+                console.error('Erro ao reproduzir efeito sonoro 3:', error.message);
+            });
+    }
+}
+
 function toggleMute(tipo) {
     console.log(`Toggling mute para ${tipo}...`);
     if (tipo === 'musica') {
         audioMusicaQuiz.muted = !audioMusicaQuiz.muted;
         if (audioMusicaQuiz.muted) {
-            // Se a música estiver muda, interrompe os efeitos
             stopEfeitos();
         }
     } else if (tipo === 'efeitos') {
-        // Se a música não estiver muda, alterna o estado do mute para os efeitos
         get_ready_audio.muted = !get_ready_audio.muted;
         next_level_audio.muted = !next_level_audio.muted;
+        happy_pop_audio.muted = !happy_pop_audio.muted;
         if (audioMusicaQuiz.muted) {
-            // Se a música estiver muda, interrompe os efeitos
             stopEfeitos();
         }
     }
 }
 
 document.addEventListener('click', playMusic);
+document.addEventListener('click', happy_pop);
 
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {

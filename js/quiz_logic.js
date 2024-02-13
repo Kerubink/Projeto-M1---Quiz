@@ -4,18 +4,18 @@ let perguntaAtual = 0;
 let tempoPorPergunta = 30;
 let tempoRestante = tempoPorPergunta;
 let intervalId;
-let pontuacao = 0; // Adicionando variável de pontuação
+let pontuacao = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
     const contagemRegressivaDiv = document.getElementById('contagemRegressiva');
     contagemRegressivaDiv.style.display = 'flex';
 
-    const iniciarContagemBtn = document.getElementById('iniciarContagemBtn'); // Substitua 'seuBotaoDeIniciar' pelo ID real do seu botão
+    const iniciarContagemBtn = document.getElementById('iniciarContagemBtn'); 
     iniciarContagemBtn.addEventListener('click', iniciarContagemRegressivaManual);
 });
 
 function iniciarContagemRegressivaManual() {
-    const iniciarContagemBtn = document.getElementById('iniciarContagemBtn'); // Substitua 'seuBotaoDeIniciar' pelo ID real do seu botão
+    const iniciarContagemBtn = document.getElementById('iniciarContagemBtn'); 
     iniciarContagemBtn.style.display = 'none';  // Oculta o botão após o início manual
 
     iniciarContagemRegressiva();
@@ -83,9 +83,8 @@ function exibirPergunta() {
         </li>
     `).join('');
 
-    tempoRestante = tempoPorPergunta;  // Configura o tempoRestante antes de iniciar o contador
+    tempoRestante = tempoPorPergunta;
 
-    // Adicione os event listeners após a criação dos elementos
     const verificarRespostaBtn = document.getElementById('verificarResposta');
     const pausarRetomarBtn = document.getElementById('pausarQuiz');
 
@@ -128,7 +127,6 @@ function verificarResposta() {
 
     if (!respostaUsuario) {
         showToast('Por favor, selecione uma alternativa.');
-        nivel_atual('osdmskd');
         return;
     }
 
@@ -151,14 +149,19 @@ function verificarResposta() {
             next_level();
             iniciarContador();
         } else {
-            encerrarQuiz();
+            encerrarQuiz(true);
         }
     } else {
         showToast('Resposta incorreta. Você perdeu!');
-        encerrarQuiz();
+        audioMusicaQuiz.pause(); // Pausa a música quando o jogador perder
+        fail_level();
+        encerrarQuiz(false);
         return;
     }
 }
+
+
+
 
 function iniciarContador() {
     clearInterval(intervalId);
@@ -220,17 +223,30 @@ function retomarQuiz() {
 // Adicione a função ao objeto global (window)
 window.retomarQuiz = retomarQuiz;
 
-function encerrarQuiz() {
+function encerrarQuiz(venceu) {
     clearInterval(intervalId);
-    const overlay = document.getElementById('overlay');
-    const retomarButton = document.getElementById('retomar');
-    overlay.style.display = 'flex';
-    retomarButton.style.display = 'flex';
-    console.log('Pontuação final: ' + pontuacao); // Exibe pontuação final no console
+    const telaSucesso = document.getElementById('telaSucesso');
+    const telaDerrota = document.getElementById('telaDerrota');
+
+    if (venceu) {
+        console.log('Parabéns! Você venceu! Pontuação final: ' + pontuacao);
+        // Exiba a tela de sucesso
+        telaSucesso.style.display = 'flex';
+    } else {
+        console.log('Você perdeu. Pontuação final: ' + pontuacao);
+        // Exiba a tela de derrota
+        telaDerrota.style.display = 'flex';
+    }
+
     setTimeout(() => {
-        window.location.href = '/pages/Resultado/resultado.html';
-    }, 2000);
+         if (venceu) {
+             window.location.href = '/pages/Resultado/resultado.html';
+         } else {
+             window.location.href = '/pages/Resultado/resultado.html';
+         }
+     }, 3000);
 }
+
 
 function exibirTempo(display) {
     const minutes = parseInt(tempoRestante / 60, 10);
