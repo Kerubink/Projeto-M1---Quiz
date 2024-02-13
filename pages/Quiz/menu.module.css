@@ -21,6 +21,18 @@ ul {
     background-color: var(--color-azul-escuro);
 }
 
+.conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    list-style: none;
+
+}
+
 .containerInfo {
     display: flex;
     align-items: center;
