@@ -9,7 +9,7 @@
     font-size: 20px;
 }
 
-ul {
+.navBar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,7 +24,8 @@ ul {
 .conteudo {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-direction: column;
     gap: 10px;
     width: 100%;
     height: 100%;
@@ -40,4 +41,16 @@ ul {
     width: 80%;
     height: 50%;
     background-color: var(--color-azul-escuro);
+}
+
+.modos {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+    height: 20%;
+    list-style: none;
+    background-color: blue;
 }

@@ -8,7 +8,7 @@ let pontuacao = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
     const contagemRegressivaDiv = document.getElementById('contagemRegressiva');
-    contagemRegressivaDiv.style.display = 'none';
+    contagemRegressivaDiv.style.display = 'flex';
 
     const iniciarContagemBtn = document.getElementById('iniciarContagemBtn'); 
     iniciarContagemBtn.addEventListener('click', iniciarContagemRegressivaManual);
