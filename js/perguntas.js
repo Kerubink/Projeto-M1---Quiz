@@ -75,9 +75,9 @@ const perguntas = [
         nivel: "dificil"
     },
     {
-        pergunta: "Qual é o país mais populoso do mundo?",
-        alternativas: ["China", "Índia", "Estados Unidos", "Brasil"],
-        resposta: "China",
+        pergunta: "Quem pintou a 'Mona Lisa'?",
+        alternativas: ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo"],
+        resposta: "Leonardo da Vinci",
         nivel: "dificil"
     },
     {
