@@ -77,7 +77,7 @@ const perguntas = [
     {
         pergunta: "Qual é o país mais populoso do mundo?",
         alternativas: ["China", "Índia", "Estados Unidos", "Brasil"],
-        resposta: "Índia",
+        resposta: "China",
         nivel: "dificil"
     },
     {
