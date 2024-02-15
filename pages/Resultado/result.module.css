@@ -1,1 +1,106 @@
 /* Estilo especificos da pagina de resultado (um botão especifico... uma animação que so acontece nessa pagina...) */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.result-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    width: 500px;
+    background: transparent;
+    border: 2px solid #0000ff;
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .3s ease, transform 0.3s ease;
+}
+
+.result-box.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.result-box h1 {
+    font-size: 52px;
+}
+
+.result-box .porcentagem-container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 40px;
+}
+
+.porcentagem-container .circular-progress {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: conic-gradient(#0000ff 3.6deg, rgba(255, 255, 255, .1) 0deg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.porcentagem-container .circular-progress::before {
+    content: '';
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    background: #1d1d84;
+    border-radius: 50%;
+}
+
+.circular-progress .progress-valor {
+    position: relative;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.porcentagem-container .score-text {
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.result-box .buttons {
+    display: flex;
+}
+
+.buttons button {
+    width: 130px;
+    height: 47px;
+    background: #0000ff;
+    border: 2px solid #0000ff;
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    margin: 0 20px 20px;
+    cursor: pointer;  
+    transition: .5s;  
+}
+
+.buttons button:nth-child(1):hover {
+    background: #1d1d84;
+    border-color: #1d1d84;
+}
+
+.buttons button:last-child {
+    background: transparent;
+    color: #0000ff;
+}
+
+.buttons button:last-child:hover {
+    background: #0000ff;
+    color: #fff;
+}
