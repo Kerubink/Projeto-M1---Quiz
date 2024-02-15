@@ -86,7 +86,7 @@ const perguntas = [
         resposta: "Albert Einstein",
         nivel: "dificil"
     },
-    {
+    { 
         pergunta: "Qual é o maior deserto do mundo?",
         alternativas: ["Saara", "Atacama", "Antártica", "Gobi"],
         resposta: "Antártica",
