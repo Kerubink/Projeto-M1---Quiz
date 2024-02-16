@@ -21,10 +21,11 @@
     text-align: right;
   }
   
+
   nav ul li {
     list-style: none;
     display: inline-block;
-    margin-left: 60px;
+    padding: 5px 10px;
   }
 
   nav ul li a:hover{
@@ -38,6 +39,8 @@
     text-decoration: none;
     color: var(--color-white);
     font-size: 13px;
+    width: fit-content; /* 'margin: auto' alone does not work if the div takes full width */
+    margin: auto;
   }
   
   .row {
@@ -54,7 +57,7 @@
   h1 {
     font-family: "Pixelify Sans", sans-serif;
     color: var(--color-white);
-    font-size: 95px;
+    font-size: 80px;
   }
   
   p {
@@ -85,4 +88,23 @@
   button a {
     color: #000;
     text-decoration: none;
+  }
+
+  /* responsividade em telas menores */
+
+
+  @media screen and (max-width: 600px) {
+    nav ul li {
+      float: none;
+      text-align: center;
+      width: 100%;
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    
   }
