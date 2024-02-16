@@ -1,13 +1,22 @@
 
 let pontuacao = localStorage.getItem('pontuacao') ? parseInt(localStorage.getItem('pontuacao')) : 0;
 let perguntasAcertadas = localStorage.getItem('perguntasAcertadas') ? parseInt(localStorage.getItem('perguntasAcertadas')) : 0;
+
 // Função para atualizar o número de perguntas acertadas no HTML
 function atualizarQuantidadeAcertos(perguntasAcertadas) {
     // Seleciona o elemento com o id "quantidadeAcertos"
     const quantidadeAcertosElement = document.getElementById('quantidadeAcertos');
     // Atualiza o conteúdo desse elemento com o número de perguntas acertadas
-    quantidadeAcertosElement.textContent = `Você acertou ${perguntasAcertadas} perguntas.`;
+    quantidadeAcertosElement.textContent = `${perguntasAcertadas}`;
 }
+
+function atualizarPontuacao(pontuacao) {
+    // Seleciona o elemento com o id "quantidadeAcertos"
+    const quantidadePontuacaoElement = document.getElementById('quantidadePontuacao');
+    // Atualiza o conteúdo desse elemento com o número de perguntas acertadas
+    quantidadePontuacaoElement.textContent = `${pontuacao}`;
+}
+
 // Função para atualizar a porcentagem de progresso no medidor circular
 function atualizarProgressoCircular(perguntasAcertadas) {
     const progressValor = document.querySelector('.progress-valor');
@@ -25,12 +34,14 @@ function atualizarProgressoCircular(perguntasAcertadas) {
         }
     }, speed);
 }
-// Função para responder uma pergunta (exemplo)
+
 function responderPerguntaCorretamente() {
     perguntasAcertadas++; // Aumenta o número de perguntas acertadas
     atualizarQuantidadeAcertos(perguntasAcertadas); // Atualiza o HTML com o novo número de perguntas acertadas
     atualizarProgressoCircular(perguntasAcertadas); // Atualiza o progresso circular
 }
+
+atualizarPontuacao(pontuacao);
 // Chamada da função para atualizar o número de perguntas acertadas no HTML
 atualizarQuantidadeAcertos(perguntasAcertadas);
 // Chamada da função para atualizar o progresso circular

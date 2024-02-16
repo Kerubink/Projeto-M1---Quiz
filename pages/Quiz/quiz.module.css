@@ -429,20 +429,21 @@
 }
 
 #telaDerrota {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
   width: 100vw;
   height: 100vh;
   justify-content: center !important;
-  align-items: center !important; 
+  align-items: center !important;
+  flex-direction: column !important; 
   z-index: 1001;
 }
 
 #telaDerrota .gameOver {
   width: 300px;
   height: 300px;
-  display: flex;
+  display: flex ;
   align-items: center;
   justify-content: center;
   flex-direction: column;
