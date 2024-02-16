@@ -5,18 +5,18 @@ let tempoPorPergunta = 30;
 let tempoRestante = tempoPorPergunta;
 let intervalId;
 let pontuacao = localStorage.getItem('pontuacao') ? parseInt(localStorage.getItem('pontuacao')) : 0;
-let perguntasAcertadas = localStorage.getItem('perguntasAcertadas') ? parseInt(localStorage.getItem('perguntasAcertadas')) : 0; // Adicionando variável para contar perguntas acertadas
+let perguntasAcertadas = localStorage.getItem('perguntasAcertadas') ? parseInt(localStorage.getItem('perguntasAcertadas')) : 0; 
 
 document.addEventListener('DOMContentLoaded', () => {
     const contagemRegressivaDiv = document.getElementById('contagemRegressiva');
     contagemRegressivaDiv.style.display = 'flex';
 
-    const iniciarContagemBtn = document.getElementById('iniciarContagemBtn'); // Substitua 'seuBotaoDeIniciar' pelo ID real do seu botão
+    const iniciarContagemBtn = document.getElementById('iniciarContagemBtn'); 
     iniciarContagemBtn.addEventListener('click', iniciarContagemRegressivaManual);
 });
 
 function iniciarContagemRegressivaManual() {
-    const iniciarContagemBtn = document.getElementById('iniciarContagemBtn'); // Substitua 'seuBotaoDeIniciar' pelo ID real do seu botão
+    const iniciarContagemBtn = document.getElementById('iniciarContagemBtn');
     iniciarContagemBtn.style.display = 'none';  // Oculta o botão após o início manual
 
     iniciarContagemRegressiva();
@@ -255,7 +255,6 @@ function encerrarQuiz(venceu) {
     }
 
     setTimeout(() => {
-         // Adapte a lógica de redirecionamento conforme necessário
          if (venceu) {
              window.location.href = '/pages/Resultado/resultado.html';
          } else {
@@ -314,19 +313,3 @@ function sairQuiz() {
 }
 
 window.sairQuiz = sairQuiz;
-
-// function getResultadoPerguntasAcertadas(){
-//     contarPerguntasAcertadas();
-//     document.getElementById('resultadoPerguntasAcertadas').innerText = `Você acertou: ${perguntasAcertadas}`
-
-// }
-
-// getResultadoPerguntasAcertadas()
-
-// let botaoExibirResultado = document.getElementById("exibirAcertos");
-// botaoExibirResultado.addEventListener("click", () => {
-//     console.log('teste');
-//     contarPerguntasAcertadas();
-//     document.getElementById('resultadoPerguntasAcertadas').innerText = "Você acertou: " + perguntasAcertadas;
-// })
-
