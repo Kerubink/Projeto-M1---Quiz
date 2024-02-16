@@ -539,7 +539,7 @@
 
 @media screen and (max-width: 800px) {
   .quiz_container {
-    width: 500px;
+    width: 500px; 
   }
 
   .alternativa {
