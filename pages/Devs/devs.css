@@ -6,7 +6,7 @@
     padding-right: 4rem;
     align-items: center;
     list-style: none;
-    border-radius: 50px;
+    border-radius: 30px;
     flex-wrap: wrap;
   }
   
@@ -40,7 +40,7 @@ body {
     font-family: "Pixelify Sans", sans-serif;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2.5rem;
     padding: 1rem;
     padding-left: 3rem;
 
