@@ -39,8 +39,6 @@
     text-decoration: none;
     color: var(--color-white);
     font-size: 13px;
-    width: fit-content; /* 'margin: auto' alone does not work if the div takes full width */
-    margin: auto;
   }
   
   .row {
