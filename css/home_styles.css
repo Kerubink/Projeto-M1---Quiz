@@ -93,17 +93,19 @@
 
 
   @media screen and (max-width: 600px) {
+
     nav ul li {
       float: none;
       text-align: center;
       width: 100%;
+      padding: 0;
     }
-    
+
     h1 {
       font-size: 3.5rem;
     }
-    p {
-      font-size: 1.2rem;
+    nav p {
+      font-size: 1.0rem;
     }
     
   }
