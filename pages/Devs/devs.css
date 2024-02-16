@@ -133,16 +133,21 @@ section {
 
 .img-primeiroperfil {
     border-radius: 50%;
-    width: 230px;
-    height: 230px;
+    width: 220px;
+    height: 220px;
 }
 
 .img-quartoperfil {
     border-radius: 50%;
-    width: 230px;
-    height: 230px;
+    width: 260px;
+    height: 220px;
 }
 
+.img-quintoperfil {
+  border-radius: 50%;
+  width: 230px;
+  height: 230px;
+}
 
 .botao {
     width: 180px;
