@@ -4,8 +4,8 @@ let perguntaAtual = 0;
 let tempoPorPergunta = 30;
 let tempoRestante = tempoPorPergunta;
 let intervalId;
-let pontuacao = 0; // Adicionando variável de pontuação
-let perguntasAcertadas = 0; // Adicionando variável para contar perguntas acertadas
+let pontuacao = localStorage.getItem('pontuacao') ? parseInt(localStorage.getItem('pontuacao')) : 0;
+let perguntasAcertadas = localStorage.getItem('perguntasAcertadas') ? parseInt(localStorage.getItem('perguntasAcertadas')) : 0; // Adicionando variável para contar perguntas acertadas
 
 document.addEventListener('DOMContentLoaded', () => {
     const contagemRegressivaDiv = document.getElementById('contagemRegressiva');
@@ -146,7 +146,7 @@ function verificarResposta() {
         
         showToast('Resposta correta!');
         perguntaAtual++;
-
+        
         if (perguntaAtual < perguntas.length) {
             tempoRestante = tempoPorPergunta;
             exibirPergunta();
@@ -164,6 +164,11 @@ function verificarResposta() {
 
 function contarPerguntasAcertadas() {
     perguntasAcertadas++;
+    console.log(perguntasAcertadas);
+    localStorage.setItem('pontuacao', pontuacao); 
+    localStorage.setItem('perguntasAcertadas', perguntasAcertadas);
+    console.log(perguntasAcertadas)
+
 }
 
 function iniciarContador() {
@@ -228,6 +233,7 @@ window.retomarQuiz = retomarQuiz;
 
 function encerrarQuiz(venceu) {
     clearInterval(intervalId);
+
     const telaSucesso = document.getElementById('telaSucesso');
     const telaDerrota = document.getElementById('telaDerrota');
 
@@ -237,12 +243,15 @@ function encerrarQuiz(venceu) {
 
         // Exiba a tela de sucesso
         telaSucesso.style.display = 'flex';
+        document.getElementById('resultadoPerguntasAcertadas').innerText = `Você acertou: ${perguntasAcertadas}`
+
     } else {
         console.log('Você perdeu. Pontuação final: ' + pontuacao);
         console.log('Você acertou ' + perguntasAcertadas + ' perguntas.'); // Adicionando contagem de perguntas acertadas
 
         // Exiba a tela de derrota
         telaDerrota.style.display = 'flex';
+        document.getElementById('resultadoPerguntasAcertadas').innerText = `Você acertou: ${perguntasAcertadas}`
     }
 
     setTimeout(() => {
@@ -306,7 +315,18 @@ function sairQuiz() {
 
 window.sairQuiz = sairQuiz;
 
-function getPerguntasAcertadas() {
-    return perguntasAcertadas;
-}
+// function getResultadoPerguntasAcertadas(){
+//     contarPerguntasAcertadas();
+//     document.getElementById('resultadoPerguntasAcertadas').innerText = `Você acertou: ${perguntasAcertadas}`
+
+// }
+
+// getResultadoPerguntasAcertadas()
+
+// let botaoExibirResultado = document.getElementById("exibirAcertos");
+// botaoExibirResultado.addEventListener("click", () => {
+//     console.log('teste');
+//     contarPerguntasAcertadas();
+//     document.getElementById('resultadoPerguntasAcertadas').innerText = "Você acertou: " + perguntasAcertadas;
+// })
 
