@@ -22,6 +22,7 @@
   }
   
   nav ul li {
+    font-family: "Pixelify Sans", sans-serif;
     list-style: none;
     display: inline-block;
     margin-left: 60px;
@@ -37,7 +38,7 @@
   nav ul li a {
     text-decoration: none;
     color: var(--color-white);
-    font-size: 13px;
+    font-size: 18px;
   }
   
   .row {
