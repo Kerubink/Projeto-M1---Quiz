@@ -22,7 +22,7 @@
   }
 
   nav ul li a:hover{
-    color: var(--color-azul-mar);
+    color: var(--color-green);
     text-decoration: underline;
     transition: .4s;
   }
@@ -57,7 +57,7 @@ section {
 .primeiro-perfil {
     background-color: var(--color-azul-escuro);
     height: 80vh;
-    border: 5px solid var(--color-azul-mar);
+    border: 5px solid var(--color-yellow);
     border-radius: 6%;
     display: flex;
     justify-content: space-between;
@@ -70,7 +70,7 @@ section {
 .segundo-perfil {
     background-color: var(--color-azul-escuro);
     height: 90vh;
-    border: 5px solid var(--color-azul-mar);
+    border: 5px solid var(--color-yellow);
     border-radius: 6%;
     display: flex;
     justify-content: space-between;
@@ -83,7 +83,7 @@ section {
 .terceiro-perfil {
     background-color: var(--color-azul-escuro);
     height: 90vh;
-    border: 5px solid var(--color-azul-mar);
+    border: 5px solid var(--color-yellow);
     border-radius: 6%;
     display: flex;
     justify-content: space-between;
@@ -96,7 +96,7 @@ section {
 .quarto-perfil {
     background-color: var(--color-azul-escuro);
     height: 90vh;
-    border: 5px solid var(--color-azul-mar);
+    border: 5px solid var(--color-yellow);
     border-radius: 6%;
     display: flex;
     justify-content: space-between;
@@ -109,7 +109,7 @@ section {
 .quinto-perfil {
     background-color: var(--color-azul-escuro);
     height: 90vh;
-    border: 5px solid var(--color-azul-mar);
+    border: 5px solid var(--color-yellow);
     border-radius: 6%;
     display: flex;
     justify-content: space-between;
@@ -128,19 +128,19 @@ section {
 }
 
 .img-profile:hover {
-    border: 2px solid var(--color-white);
+    border: 2px solid var(--color-green);
 }
 
 .img-primeiroperfil {
     border-radius: 50%;
-    width: 220px;
-    height: 220px;
+    width: 210px;
+    height: 210px;
 }
 
 .img-quartoperfil {
     border-radius: 50%;
-    width: 260px;
-    height: 220px;
+    width: 250px;
+    height: 230px;
 }
 
 .img-quintoperfil {
