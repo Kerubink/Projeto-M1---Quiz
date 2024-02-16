@@ -297,6 +297,7 @@
               <img width="300" class="gameOver" src="/assets/icons/anim/game-over.gif" alt="">
           </div>
           <div class="rain" id="rainContainer"></div>
+          <div id="resultadoPerguntasAcertadas"></div>
       </div>
       
 
@@ -362,5 +363,10 @@
     <script src="/js/quiz_config.js"></script>
     <script src="/js/perguntas.js"></script>
     <script type="module" src="/js/quiz_logic.js"></script>
+    <script src="/js/quiz_logic.js"></script>
+    <script>
+      contarPerguntasAcertadas();
+      document.getElementById('resultadoPerguntasAcertadas').innerText = "Você acertou: " + perguntasAcertadas;
+  </script>
   </body>
 </html>

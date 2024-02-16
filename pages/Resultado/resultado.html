@@ -19,7 +19,28 @@
 </head>
 <body>
     <h1>Resultado</h1>
+    <div class="result-box">
+        <h1>Quiz Resultado!</h1>
+        <div class="porcentagem-container">
+            <div class="circular-progress">
+                <span class="progress-valor">0%</span>
+            </div>
+            <div ></div>
+            <span id="resultadoPerguntasAcertadas"></span>
+        </div>
+
+        <div class="buttons">
+            <button class="tryRanking-btn">Ranking</button>
+            <button class="goInicio-btn">Inicio</button>
+        </div>
+        </div>
+    </div>
     <script src="/js/script.js"></script>
+    <script src="/js/quiz_logic.js"></script>
+    <script>
+        contarPerguntasAcertadas();
+        document.getElementById('resultadoPerguntasAcertadas').innerText = "Você acertou: " + perguntasAcertadas;
+    </script>
     <script src="/js/result.js"></script>
 </body>
 </html>
