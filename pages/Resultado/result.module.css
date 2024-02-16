@@ -104,3 +104,14 @@ body {
     background: #0000ff;
     color: #fff;
 }
+
+@media screen and (max-width: 400px) {
+    .result-box {
+        width: 80%;
+    }
+
+    .result-box .buttons {
+        flex-direction: column;
+    }
+
+  }
