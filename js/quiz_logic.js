@@ -165,11 +165,11 @@ function verificarResposta() {
 function contarPerguntasAcertadas() {
     perguntasAcertadas++;
     console.log(perguntasAcertadas);
-    localStorage.setItem('pontuacao', pontuacao); 
+    localStorage.setItem('pontuacao', pontuacao);
     localStorage.setItem('perguntasAcertadas', perguntasAcertadas);
     console.log(perguntasAcertadas)
-
 }
+
 
 function iniciarContador() {
     clearInterval(intervalId);
