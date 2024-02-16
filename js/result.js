@@ -41,3 +41,19 @@ document.getElementById('limparLocalStorage-btn').addEventListener('click', func
     console.log('Local Storage limpo!');
     window.location.href = '/index.html';
 });
+
+
+window.addEventListener('unload', function() {
+    localStorage.clear();
+});
+
+
+window.addEventListener('popstate', function(event) {
+    localStorage.clear();
+});
+// Função para limpar o localStorage ao clicar em um link para outra página
+document.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+        localStorage.clear();
+    });
+});
