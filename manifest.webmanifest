@@ -1,7 +1,7 @@
 {
   "name": "Quiz PDA",
   "short_name": "Quiz",
-  "start_url": "/",
+  "start_url": "/pages/Quiz/quiz.html",
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#fff",
