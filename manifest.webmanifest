@@ -1,7 +1,7 @@
 {
     "name": "Quiz PDA",
     "short_name": "Quiz",
-    "start_url": "https://projeto-quiz-five.vercel.app", 
+    "start_url": "https://projeto-quiz-five.vercel.app/", 
     "display": "standalone", 
     "background_color": "#6495ed",
     "theme_color": "#6495ed",
