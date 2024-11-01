@@ -1,21 +1,20 @@
 {
-    "name": "Quiz PDA",
-    "short_name": "Quiz",
-    "start_url": "/index.html", 
-    "display": "standalone", 
-    "background_color": "#fff",
-    "theme_color": "#fff",
-    "icons": [
-      {
-        "src": "./public/logo1.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "./public/logo1.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      }
-    ]
-  }
-  
+  "name": "Quiz PDA",
+  "short_name": "Quiz",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#fff",
+  "icons": [
+    {
+      "src": "/assets/icons/logo1.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/logo1.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
